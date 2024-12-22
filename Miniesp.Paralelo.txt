@@ -1,0 +1,113 @@
+  Algoritmo GESTION_ESCOLAR_DE_PARALELOS
+    Clase Paralelo
+      1.  Declarar variables
+          nomParalelo: Carácter
+          estudiantes: <<Arreglo>>[n][m] Estudiante
+          fila: entero
+      2.  Metodo Paralelo(nom: Caracter, arregloEstudiantes[][]: <<Arreglo>> Estudiante, fil: entero)
+          a.  nom = nomParalelo
+          b.  estudiantes = arregloEstudiantes[][]
+          c.  fila = fil
+          d.  Fin Metodo Paralelo
+      3.  Metodo toString(): Cadena
+          a.  mensaje: Cadena
+          b.  mensaje=”Paralelo: ” ,obtenerNomParalelo();
+          c.  for int=0; i<Longitud(estudiantes[fila]); i++
+mensaje += obtenerNomParalelo(), estudiantes[fila][i].toString
+          d.  endfor
+          e.  return mensaje
+          f.  Fin Metodo toString
+    Fin Clase Paralelo
+    Clase Estudiante
+      1.  Declarar variables
+          nomEstudiante: Cadena
+          nota1: real
+          nota2: real
+          notaParcial: real
+      2.  Metodo Estudiante(nom: Cadena, n1: real, n2: real)
+          a.  nomEstudiante = nom
+          b.  nota1 = n1
+          c.  nota2 = n2
+          d.  Fin Metodo Estudiante
+      3.  Metodo toString(): Cadena
+          a.  mensaje: Cadena
+          b.  mensaje=”Nombre Estudiante: ” ,obtenerNomEstudiante(), “,Nota 1: ” ,obtenerNota1(), “,Nota 2: ” ,obtenerNota2(), “,Nota Parcial: ” ,obtenerNotaParcial()
+          c.  return mensaje
+          d.  Fin Metodo toString
+      4.  Metodo calcularNotaParcial()
+          a.  notaParcial = (nota1 + nota2)/2
+          b.  Fin Metodo calcularNotaParcial
+    Fin Clase Estudiante
+    Clase PruebaParalelo
+      1.  Metodo principal()
+          a.  Declarar variables
+              nomEst1: Cadena
+              nomEst2: Cadena
+              nomEst3: Cadena
+              nomEst4: Cadena
+              n1_1: real
+              n1_2: real
+              n1_3: real
+              n1_4: real
+              n2_1: real
+              n2_2: real
+              n2_3: real
+              n2_4: real
+
+              nParal1: Carácter
+              nParal2: Carácter
+              lista_Estudiantes<<Arreglo>>[n] Estudiante
+              fila1: entero
+              fila2: entero
+              promedioTotal: real
+              suma: real 
+              numeroEst: int 
+
+          b.  Asignar valores
+              nomEst1 = “Javier Marlow”
+              nomEst2 = “Enrique Piniones”
+              nomEst3 = “Marco Juarez”
+              nomEst4 = “Mikaela Perez”
+              n1_1 = 9.1
+              n1_2 = 7
+              n1_3 = 6.5
+              n1_4 = 8.5
+              n2_1 = 8.3
+              n2_2 = 8
+              n2_3 = 7
+              n2_4 = 10
+
+              nParal1 = ‘A’
+              nParal2 = ‘B’
+              lista_estudiantes[2][2] = {{est1, est2}, {est3, est4}}
+              fila1 = 0
+              fila2 = 1
+              promedioTotal = 0
+              suma = 0
+              numeroEst = 0
+
+          c.  Declarar, crear e inicializar objetos
+              Estudiante est1 = new Estudiante(nomEst1, n1_1, n2_1)
+              Estudiante est2 = new Estudiante(nomEst2, n1_2, n2_2)
+              Estudiante est3 = new Estudiante(nomEst3, n1_3, n2_3)
+              Estudiante est4 = new Estudiante(nomEst4, n1_4, n2_4)
+
+              Paralelo paralelo1 = new Paralelo(nParal1, lista_estudiantes, fila1)
+              Paralelo paralelo2 = new Paralelo(nParal2, lista_estudiantes, fila2)
+
+          d.  for int i = 0; i<Longitud(lista_estudiantes); i++
+              1.  for int j=0; j<Longitud(lista_estudiantes[i]) ; j++)
+                  Estudiante estudiante = lista_estudiantes[i][j];estudiante.calcularNotaParcial();
+              2.  endfor
+          e.  endfor
+          f.  Imprimir paralelo1,paralelo2
+          g.  for int i=0; i<Longitud(lista_estudiantes); i++
+              1.  for int i=0; j< Longitud(lista_estudiantes); j++
+                  suma = suma + lista_estudiantes[i][j].notaParcial
+                  numeroEst = numeroEst +1
+              2.  endfor
+          h.  endfor
+          i.  promedioTotal = suma/numeroEst
+          j.  Imprimir “Promedio de todos los paralelos: ” ,obtenerPromedioTotal 
+    Fin Clase PruebaParalelo
+  Fin
